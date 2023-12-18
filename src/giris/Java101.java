@@ -5,25 +5,19 @@ import java.util.Scanner;
 public class Java101 {
     public static void main(String[] args) {
 
-        int mat, turkce, muzık, fen;
+        double fiyat,kdvOran, KdvliFiyat, kdvTutar;
 
         Scanner inp = new Scanner(System.in);
+        System.out.println("Fiyat Giriniz: ");
+        fiyat = inp.nextDouble();
+        kdvOran = fiyat <= 1000 ? 0.18 : 0.8;
+        kdvTutar = fiyat * kdvOran ;
+        KdvliFiyat = fiyat + kdvTutar;
 
-        System.out.println("Mat Notunuz: ");
-        mat = inp.nextInt();
 
-        System.out.println("Turkce Notunuz: " );
-        turkce = inp.nextInt();
-
-        System.out.println("Muzık Notunuz: ");
-        muzık = inp.nextInt();
-
-        System.out.println("Fen Notunuz: ");
-        fen = inp.nextInt();
-
-        int topla = (mat + turkce + muzık + fen);
-        double sonuc = topla / 4;
-        System.out.print("Ortalamanız : " +sonuc);
-        System.out.println(sonuc > 60 ? "tebrikler, sınıfı geçtiniz" : "üzgünüm, sınıfta kaldınız");
+        System.out.println("KDV'siz Tutar : " + fiyat);
+        System.out.println("KDV Oranı : " + kdvOran);
+        System.out.println("KDV tutarı: " + kdvTutar);
+        System.out.println("KDV'li tutar: " + KdvliFiyat);
     }
 }
